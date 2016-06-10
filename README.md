@@ -12,6 +12,14 @@ Collection::macro('countRecursive', function () {
     return count($this->items, COUNT_RECURSIVE);
 });
 ```
+#### Pipe
+Apply any given function to the collection
+```php
+Collection::macro('pipe', function ($callback) {
+    return $callback($this);
+});
+```
+** Source [adamwathan's book](http://adamwathan.me/refactoring-to-collections/)
 
 #### toAssoc
 Given a collection of pairs, turn it into a key => value collection
