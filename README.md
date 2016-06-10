@@ -56,3 +56,23 @@ Collection::macro('transpose', function () {
 });
 ```
 **Source: [adamwathan](http://adamwathan.me/2016/04/06/cleaning-up-form-input-with-transpose/)**
+
+## Filesystem
+
+### Is Writable By All
+Check if a file or directory is writable by all users
+```php
+Filesystem::macro('isWritableByAll', function ($filepath) {
+    return file_exists($path) && substr(sprintf('%o', fileperms($path)), -1) === '7';
+});
+```
+**by krzystof**
+
+### Make Writable By All
+Change permissions on a file or directory to be writable by all users
+```php
+Filesystem::macro('makeWritableByAll', function ($filepath) {
+    return chmod($path, 0777);
+});
+```
+**by krzystof**
