@@ -1,4 +1,5 @@
-# A Pile Of Macros
+# A Bunch Of Macros
+
 This is just a list of Laravel's macro found here and there. Feel free to add yours!
 
 Laravel's macroable classes are:
