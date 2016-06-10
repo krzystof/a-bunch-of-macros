@@ -2,7 +2,18 @@
 This is just a list of Laravel's macro found here and there. Feel free to add yours!
 
 Laravel's macroable classes are:
-* [Collection](#collection)
+Illuminate/Routing/ResponseFactory
+Illuminate/Routing/UrlGenerator
+Illuminate/Routing/Router
+Illuminate/Database/Query/Builder
+Illuminate/Cache/Repository
+Illuminate/Http/Request
+Illuminate/Http/UploadedFile
+Illuminate/Support/Str
+* [Illuminate/Support/Collection](#collection)
+Illuminate/Support/Traits/Macroable
+Illuminate/Support/Arr
+Illuminate/Filesystem/Filesystem
 
 ## Collection
 
