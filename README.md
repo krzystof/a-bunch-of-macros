@@ -2,37 +2,38 @@
 This is just a list of Laravel's macro found here and there. Feel free to add yours!
 
 Laravel's macroable classes are:
-Illuminate/Routing/ResponseFactory
-Illuminate/Routing/UrlGenerator
-Illuminate/Routing/Router
-Illuminate/Database/Query/Builder
-Illuminate/Cache/Repository
-Illuminate/Http/Request
-Illuminate/Http/UploadedFile
-Illuminate/Support/Str
+* Illuminate/Support/Arr
+* Illuminate/Database/Query/Builder
 * [Illuminate/Support/Collection](#collection)
-Illuminate/Support/Traits/Macroable
-Illuminate/Support/Arr
-Illuminate/Filesystem/Filesystem
+* [Illuminate/Filesystem/Filesystem](#filesystem)
+* Illuminate/Cache/Repository
+* Illuminate/Routing/Router
+* Illuminate/Http/Request
+* Illuminate/Routing/ResponseFactory
+* Illuminate/Support/Str
+* Illuminate/Http/UploadedFile
+* Illuminate/Routing/UrlGenerator
 
 ## Collection
 
-#### Count Recursive
+### Count Recursive
 ```php
 Collection::macro('countRecursive', function () {
     return count($this->items, COUNT_RECURSIVE);
 });
 ```
-#### Pipe
+**by krzystof**
+
+### Pipe
 Apply any given function to the collection
 ```php
 Collection::macro('pipe', function ($callback) {
     return $callback($this);
 });
 ```
-** Source [adamwathan's book](http://adamwathan.me/refactoring-to-collections/)
+**Source [adamwathan's book](http://adamwathan.me/refactoring-to-collections/)**
 
-#### toAssoc
+### toAssoc
 Given a collection of pairs, turn it into a key => value collection
 ```php
 Collection::macro('toAssoc', function () {
@@ -44,7 +45,7 @@ Collection::macro('toAssoc', function () {
 ```
 **Source: [adamwathan](https://gist.github.com/adamwathan/a04873b44a1dcd0f2b4257168499162c)**
 
-#### Transpose
+### Transpose
 ```php
 Collection::macro('transpose', function () {
     $items = array_map(function (...$items) {
