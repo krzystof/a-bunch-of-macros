@@ -12,7 +12,18 @@ Collection::macro('countRecursive', function () {
     return count($this->items, COUNT_RECURSIVE);
 });
 ```
-*by krzystof*
+
+#### toAssoc
+Given a collection of pairs, turn it into a key => value collection
+```php
+Collection::macro('toAssoc', function () {
+    return $this->reduce(function ($items, $pair) {
+        list($key, $value) = $pair;
+        return $items->put($key, $value);
+    }, new static);
+});
+```
+**Source: [adamwathan](https://gist.github.com/adamwathan/a04873b44a1dcd0f2b4257168499162c)**
 
 #### Transpose
 ```php
@@ -24,7 +35,4 @@ Collection::macro('transpose', function () {
     return new static($items);
 });
 ```
-*by [adamwathan](https://github.com/adamwathan)*
-
-**Source: [Adam Wathan's blog](http://adamwathan.me/2016/04/06/cleaning-up-form-input-with-transpose/)**
-
+**Source: [adamwathan](http://adamwathan.me/2016/04/06/cleaning-up-form-input-with-transpose/)**
