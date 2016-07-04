@@ -9,7 +9,7 @@ Laravel's macroable classes are:
 * [Illuminate/Filesystem/Filesystem](#filesystem)
 * Illuminate/Cache/Repository
 * Illuminate/Routing/Router
-* Illuminate/Http/Request
+* [Illuminate/Http/Request](#request)
 * Illuminate/Routing/ResponseFactory
 * Illuminate/Support/Str
 * Illuminate/Http/UploadedFile
@@ -75,5 +75,27 @@ Change permissions on a file or directory to be writable by all users
 Filesystem::macro('makeWritableByAll', function ($filepath) {
     return chmod($path, 0777);
 });
+```
+**by krzystof**
+
+## Request
+
+### Filter only
+Get only the parameters of the request if they are not empty
+```php
+Request::macro('filterOnly', function (...$attributes) {
+    return array_filter($this->only($attributes));
+});
+
+echo $request->title;
+// ''
+echo $request->content;
+// 'something'
+
+$request->only('title', 'content');
+// ['title' => '', content' => 'something']
+
+$request->filterOnly('title', 'content');
+// ['content' => 'something']
 ```
 **by krzystof**
