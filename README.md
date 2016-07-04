@@ -25,7 +25,7 @@ Collection::macro('countRecursive', function () {
 ```
 **by krzystof**
 
-### Pipe
+### Pipe (added in core, [see PR](https://github.com/laravel/framework/pull/13899))
 Apply any given function to the collection
 ```php
 Collection::macro('pipe', function ($callback) {
